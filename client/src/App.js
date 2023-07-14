@@ -1,5 +1,7 @@
 import { Home, LandingPage, Form, Detail, NotFound } from "./views"
 import { Route, Switch } from 'react-router-dom';
+import axios from "axios";
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 function App() {
 

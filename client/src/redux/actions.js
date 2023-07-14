@@ -10,13 +10,13 @@ import { GET_ALL_COUNTRIES,
     FILTER_STATE, 
     FILTER_BY_ACTIVITY} from './action-types';
 
-const URL_COUNTRIES = "http://localhost:3001/countries"
-const URL_ACTIVITIES = "http://localhost:3001/activities"
+const COUNTRIES = "countries"
+const ACTIVITIES = "activities"
 
 export const getAllCountries = () => {
     return async function (dispatch) {
         try {
-            const apiData = await axios.get(URL_COUNTRIES);
+            const apiData = await axios.get(COUNTRIES);
             const countries = apiData.data;
 
             dispatch({
@@ -33,7 +33,7 @@ export const getAllCountries = () => {
 export const getAllActivities = () => {
     return async function (dispatch){
         try {
-            const apiData = await axios.get(URL_ACTIVITIES)
+            const apiData = await axios.get(ACTIVITIES)
             const activity = apiData.data
 
             dispatch({
@@ -49,7 +49,7 @@ export const getAllActivities = () => {
 export const getCountryByName = (name) => {
     return async function (dispatch) {
         try {
-            const countryData = await axios.get(`${URL_COUNTRIES}?name=${name}`);
+            const countryData = await axios.get(`${COUNTRIES}?name=${name}`);
             const country = countryData.data;
             
             dispatch({
@@ -66,7 +66,7 @@ export const getCountryByName = (name) => {
 export const getCountryById = (id) => {
     return async function (dispatch) {
         try {
-            const countryData = await axios.get(`${URL_COUNTRIES}/${id}`);
+            const countryData = await axios.get(`${COUNTRIES}/${id}`);
             const country = countryData.data;
             dispatch({
                 type: GET_COUNTRY_BY_ID,
@@ -121,7 +121,7 @@ export const stateFilter = () => {
 
 export const createActivity = (newActivity) => {
     return async function (dispatch){
-        const apiData = await axios.post(URL_ACTIVITIES, newActivity)
+        const apiData = await axios.post(ACTIVITIES, newActivity)
         const activity = apiData.data
 
             dispatch({
