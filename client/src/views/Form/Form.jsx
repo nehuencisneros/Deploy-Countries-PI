@@ -25,12 +25,16 @@ const Form = () => {
         flag: ""
     })
 
+    console.log(newActivity.country[0]);
+
     useEffect(() => {
         dispatch(getAllCountries())
-        setNewActivity({
-            ...newActivity,
-            country: [...newActivity.country, idCountry]
-        })  
+        if(idCountry){
+            setNewActivity({
+                ...newActivity,
+                country: [...newActivity.country, idCountry]
+            })  
+        }
     },[dispatch])
 
     const disabled = (newActivity.name === "" || newActivity.difficulty === "" || newActivity.duration === "" || newActivity.season === "" || newActivity.country.length === 0)
@@ -77,6 +81,7 @@ const Form = () => {
             country: newActivity.country.filter((country) => country !== event.target.value)
         }))
     }
+
 
 
     const handlerSubmit = (event) => {
@@ -187,7 +192,7 @@ const Form = () => {
                     </div>
 
                 </div>
-                {newActivity.country.length > 0 && newActivity.country[0].length > 0 && <form onSubmit={handlerSubmit} className={style.countriesContainer} >
+                {newActivity.country.length > 0 && <form onSubmit={handlerSubmit} className={style.countriesContainer} >
                     <div className={style.titleCountriesContainer}>
                         <h2 className={style.titleCountries}>Countries Selected</h2>
                     </div>
