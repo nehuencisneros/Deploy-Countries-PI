@@ -25,7 +25,6 @@ const Form = () => {
         flag: ""
     })
 
-
     useEffect(() => {
         dispatch(getAllCountries())
         setNewActivity({
@@ -188,7 +187,7 @@ const Form = () => {
                     </div>
 
                 </div>
-                {newActivity.country.length > 0 && <form onSubmit={handlerSubmit} className={style.countriesContainer} >
+                {newActivity.country.length > 0 && newActivity.country[0].length > 0 && <form onSubmit={handlerSubmit} className={style.countriesContainer} >
                     <div className={style.titleCountriesContainer}>
                         <h2 className={style.titleCountries}>Countries Selected</h2>
                     </div>
