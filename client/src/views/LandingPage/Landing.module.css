@@ -1,0 +1,25 @@
+.landingImage{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../images/image.jpg') ;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    text-decoration: none;
+    font-size: 35px;
+    color: #84b6f4;
+    transition: color .5s;
+}
+
+.button:hover{
+    font-size: 38px;
+    transition: font-size 0.5s;
+    color: #c4dafa;
+    
+}

@@ -1,0 +1,25 @@
+.filters{
+    display: flex;    
+    justify-content:space-around;
+    align-items: center;
+    background-color: #84b6f4;
+    padding-block: 0.5rem;
+}
+
+
+.orders{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 1.5rem;
+}
+
+.continents{
+    justify-content: space-around;
+    display: flex;
+
+}
+.activities{
+    justify-content: space-around;
+    display: flex;
+}
